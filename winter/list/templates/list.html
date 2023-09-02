@@ -1,0 +1,101 @@
+{% extends 'base.html' %} {% block title %}
+<title>명단</title>
+{% endblock %}
+{% block content %}
+
+        
+<!-- Main -->
+<div id="main">
+    <section class="wrapper style1">
+        <div class="inner">
+
+            <!-- Elements -->
+            <h2 id="elements">예매폼</h2>
+            <p>카카오뱅크 3333-27-2346555 유새연으로 5000원을 입금해 주시고 예매폼을 작성해 주세요</p>
+            <div class="row 200%">
+                <div class="6u 12u$(medium)">
+
+                    <h4>TimeTable</h4>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>시간</th>
+                                <th>무엇을?</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>18:00</td>
+                                <td>1부 공연</td>
+                            </tr>
+                            <tr>
+                                <td>19:00~19:20</td>
+                                <td>쉬는시간 및 이벤트</td>
+                            </tr>
+                            <tr>
+                                <td>19:20~20:00</td>
+                                <td>2부 공연</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                </div>
+                <div class="6u$ 12u$(medium)">
+
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <table id="query">
+                        {{ form.as_table }} 
+                    </table>
+                    <p>예매폼 제출 전 마지막으로 한 번 더 입금 확인 부탁드립니다.</p>
+                    <!-- Break -->
+                    <div class="12u$">
+                        <ul class="actions">
+                            <li><input type="submit" value="Send"></li>
+                        </ul>
+                    </div>
+                </form>
+                    
+
+                    <!-- <form method="post" action="#">
+                        <div class="row uniform">
+                            <div class="9u 12u$(small)">
+                                <input type="text" name="query" id="query" value="" placeholder="Query">
+                            </div>
+                            <div class="9u 12u$(small)">
+                                <input type="text" name="query" id="query" value="" placeholder="Query">
+                            </div>
+                            <div class="9u 12u$(small)">
+                                <input type="text" name="query" id="query" value="" placeholder="Query">
+                            </div>
+                            <div class="9u 12u$(small)">
+                                <input type="text" name="query" id="query" value="" placeholder="Query">
+                            </div>
+
+                            
+                            <div class="12u$">
+                                <ul class="actions">
+                                    <li><input type="submit" value="Send Message"></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </form> -->
+
+
+                    <!-- Box -->
+                    <div class="box">
+                        <p>작성해 주신 모든 데이터는 공연이 끝난 후 삭제하겠습니다.</p>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+        
+        
+{% endblock %}

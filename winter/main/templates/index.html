@@ -1,0 +1,43 @@
+{% extends 'base.html' %} {% block title %}
+<title>MAIN</title>
+{% endblock %}
+{% block content %}
+
+<!-- Main -->
+	<div id="main">
+
+		<section id="banner" data-video="images/banner">
+			<div class="inner">
+				<header>
+					<h1>낙의 겨울나기</h1>
+					<p>낙 3기 단독 공연</p>
+				</header>
+				<a href="{% url 'list' %}" class="button big alt scrolly">예매하기</a>
+			</div>
+		
+		</section>
+
+
+
+	<!-- Three -->
+		<section class="wrapper ">
+			<div class="inner">
+				<header class="align-center">
+					<h2>2월 3일 토요일 18시 신촌</h2>
+					<p>입장료 5000원</p>
+				</header>
+				<!-- 3 Column Video Section -->
+					<div class="flex flex-3">
+
+						<div class="image fit">
+							<img src="/static/images/pic09.jpg" alt="" />
+						</div>	
+
+					</div>
+			</div>
+		</section>
+
+	</div>
+
+
+{% endblock %}

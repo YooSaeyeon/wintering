@@ -1,0 +1,133 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="{% static 'assets/favicon.ico' %}" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <link href="{% static 'css/main.css' %}" rel="stylesheet" />
+        {% block title %} {% endblock %}
+        <style>
+            .custom-header {
+                background: rgba(4, 22, 37, 0.75);
+                color: #c0c5c9;
+                cursor: default;
+                position: fixed;
+                width: 100%;
+                z-index: 10001;
+                padding: 10px 0;
+            }
+
+            .custom-header-content {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 20px;
+            }
+
+            .custom-header h1 a {
+                color: #ffffff;
+                text-decoration: none;
+                font-size: 1.25em;
+                
+            }
+
+            .custom-header ul.custom-links {
+                list-style: none;
+                padding: 0;
+                display: flex;
+                gap: 20px;
+            }
+
+            .custom-header ul.custom-links li a {
+                color: inherit;
+                text-decoration: none;
+                font-size: 1em;
+            }
+
+            @media screen and (max-width: 768px) {
+                .custom-header-content {
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+                .custom-header h1 {
+                    margin-bottom: 10px;
+                }
+                .custom-header ul.custom-links {
+                    flex-direction: column;
+                    gap: 10px;
+                }
+            }
+        </style>
+    </head>
+	<body>
+
+		<!-- Header -->
+        <header class="custom-header">
+            <div class="custom-header-content">
+                <h1><a href="{% url 'index' %}">NAK <span>WINTERING</span></a></h1>
+                <nav id="navbar">
+                    <ul class="custom-links">
+                        <li><a href="{% url 'index' %}">Home</a></li>
+                        <li><a href="{% url 'list' %}">list</a></li>
+                        <li><a href="{% url 'music' %}">setlist</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+            
+
+		<!-- Nav -->
+			<!-- <nav id="menu">
+				<ul class="links">
+					<li><a href="{% url 'index' %}">Home</a></li>
+					<li><a href="{% url 'list' %}">list</a></li>
+					<li><a href="{% url 'music' %}">setlist</a></li>
+				</ul>
+			</nav> -->
+
+            <!-- <section id="banner" data-video="images/banner">
+                <div class="inner">
+                    <header>
+                        <h1>This is Broadcast</h1>
+                        <p>Morbi eu purus eget urna interdum dignissim sed consectetur augue<br />
+                            vivamus vitae libero in nulla iaculis eleifend non sit amet nulla.</p>
+                    </header>
+                    <a href="#main" class="button big alt scrolly">Dignissim</a>
+                </div>
+            
+            </section> -->
+
+            
+            {% block content %} {% endblock %}
+    
+
+        <!-- Footer -->
+        <footer id="footer">
+            <div class="inner">
+                <div class="flex flex-3">
+                    <div class="col">
+                        <ul class="alt">
+                            <li><a href="https://www.instagram.com/nak_band/" target="_blank">낙밴드 인스타 바로가기</a></li>
+                            <li><a href="https://www.youtube.com/@nakband" target="_blank">낙밴드 유튜브 바로가기</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <div class="copyright">
+			Made with: <a href="https://templated.co/">Templated.co</a>
+		</div>
+
+		<!-- Scripts -->
+			<script src="/static/assets/js/jquery.min.js"></script>
+			<script src="/static/assets/js/jquery.scrolly.min.js"></script>
+			<script src="/static/assets/js/skel.min.js"></script>
+			<script src="/static/assets/js/util.js"></script>
+			<script src="/static/assets/js/main.js"></script>
+    </body>
+</html>
